@@ -1,0 +1,1184 @@
+
+**** 12/13/20 17:27:29 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulation"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\simulation.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "simulation.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../telestikos enisxyths-pspicefiles/telestikos enisxyths.lib" 
+* From [PSPICE NETLIST] section of F:\CADENCE\WORKING DIRECTORY\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1s 0 SKIPBP 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TELESTIKOS ENISXYTHS
+C_Cc         N00280 N00657  0.83p  TC=0,0 
+V_Vss         0 N00835 2.094Vdc
+V_Vdd         N00454 0 2.094Vdc
+C_CL         0 N00657  2.0198p  TC=0,0 
+M_M4         N00280 N00238 N00454 N00454 pfet1  
++ L=0.35u  
++ W=4.9u         
+M_M6         N00657 N00280 N00454 N00454 pfet1  
++ L=0.35u  
++ W=1u         
+M_M3         N00238 N00238 N00454 N00454 pfet1  
++ L=0.35u  
++ W=4.9u         
+M_M1         N00238 N00613 N00212 N00212 nfet1  
++ L=0.35u  
++ W=1.15u         
+M_M2         N00280 0 N00212 N00212 nfet1  
++ L=0.35u  
++ W=1.15u         
+M_M7         N00657 N00505 N00835 N00835 nfet1  
++ L=0.35u  
++ W=2u         
+M_M5         N00212 N00505 N00835 N00835 nfet1  
++ L=0.35u  
++ W=1.4u         
+V_V3         N00613 0  
++SIN 0 0.1 50 0 0 0
+I_Iref         N00454 N00505 DC 16uAdc  
+M_M8         N00505 N00505 N00835 N00835 nfet1  
++ L=0.35u  
++ W=1.4u         
+
+**** RESUMING simulation.cir ****
+.END
+
+**** 12/13/20 17:27:29 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulation"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\simulation.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               pfet1           nfet1           
+               PMOS            NMOS            
+       LEVEL    3               3            
+         TPG   -1                            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+          LD   22.000000E-09  164.700000E-09 
+         VTO    -.9056           .786        
+          KP   29.352000E-06   96.379000E-06 
+       GAMMA     .4863           .5863       
+         PHI     .6              .6          
+      LAMBDA    0               0            
+         RSH  104.7            85.45         
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .85             .8          
+        PBSW     .85             .8          
+          CJ  484.470000E-06  385.410000E-06 
+        CJSW  164.570000E-12  139.400000E-12 
+          MJ     .5027          1.1854       
+        MJSW     .217168         .125195     
+        CGSO   53.752000E-12  402.410000E-12 
+        CGDO   53.752000E-12  402.410000E-12 
+        CGBO  336.500000E-12  361.440000E-12 
+        NSUB   18.900000E+15   16.160000E+15 
+         NFS    3.460000E+12    5.000000E+12 
+         TOX   21.200000E-09   21.200000E-09 
+          XJ  200.000000E-09  200.000000E-09 
+          UO  180.2           591.7          
+       UCRIT   10.000000E+03   10.000000E+03 
+        VMAX  373.200000E+03  208.200000E+03 
+       DELTA    1.52             .6967       
+       THETA     .1248           .08122      
+         ETA     .1641           .07066      
+       KAPPA    9.694            .1396       
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+Convergence problem in transient analysis at Time =  186.3E-15
+         Time step =  186.3E-15, minimum allowable step size =  1.000E-12
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.073V  \         0V
+    V(N00657)                 =    -2.084V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =  -851.80mV  \         0V
+    V(N00212)                 =    -1.672V  \         0V
+    V(N00505)                 =    -2.081V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -2.836A  \         0A
+    I(V_Vdd)                  =   -9.349mA  \         0A
+    I(V_V3)                   =  -824.82uA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M6      M_M3      M_M1      M_M2      M_M7      M_M5      
+    M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.6720 (N00238)    -.8518 (N00280)   -2.0730 (N00454)    2.0940     
+
+(N00505)   -2.0808 (N00613) 46.81E-12 (N00657)   -2.0841 (N00835)   -2.0940 
+
+Resuming Simulation with the following settings
+ITL4 = 125
+ABSTOL = 1.41e-009
+
+Convergence problem in transient analysis at Time =  186.3E-15
+         Time step =  186.3E-15, minimum allowable step size =  1.000E-12
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.073V  \         0V
+    V(N00657)                 =    -2.084V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =  -851.80mV  \         0V
+    V(N00212)                 =    -1.672V  \         0V
+    V(N00505)                 =    -2.081V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -2.836A  \         0A
+    I(V_Vdd)                  =   -9.349mA  \         0A
+    I(V_V3)                   =  -824.82uA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M6      M_M3      M_M1      M_M2      M_M7      M_M5      
+    M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.6720 (N00238)    -.8518 (N00280)   -2.0730 (N00454)    2.0940     
+
+(N00505)   -2.0808 (N00613) 46.81E-12 (N00657)   -2.0841 (N00835)   -2.0940 
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+ABSTOL = 2e-006
+
+Convergence problem in transient analysis at Time =  186.3E-15
+         Time step =  186.3E-15, minimum allowable step size =  1.000E-12
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.073V  \         0V
+    V(N00657)                 =    -2.084V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =  -851.80mV  \         0V
+    V(N00212)                 =    -1.672V  \         0V
+    V(N00505)                 =    -2.081V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -2.836A  \         0A
+    I(V_Vdd)                  =   -9.349mA  \         0A
+    I(V_V3)                   =  -824.82uA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M6      M_M3      M_M1      M_M2      M_M7      M_M5      
+    M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.6720 (N00238)    -.8518 (N00280)   -2.0730 (N00454)    2.0940     
+
+(N00505)   -2.0808 (N00613) 46.81E-12 (N00657)   -2.0841 (N00835)   -2.0940 
+
+Resuming Simulation with the following settings
+ABSTOL = 0.001
+
+Convergence problem in transient analysis at Time =  186.3E-15
+         Time step =  186.3E-15, minimum allowable step size =  1.000E-12
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.073V  \         0V
+    V(N00657)                 =    -2.084V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =  -851.80mV  \         0V
+    V(N00212)                 =    -1.672V  \         0V
+    V(N00505)                 =    -2.081V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -2.836A  \         0A
+    I(V_Vdd)                  =   -9.349mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M1      M_M2      M_M7      M_M5      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.6720 (N00238)    -.8518 (N00280)   -2.0730 (N00454)    2.0940     
+
+(N00505)   -2.0808 (N00613) 46.81E-12 (N00657)   -2.0841 (N00835)   -2.0940 
+
+Resuming Simulation with the following settings
+RELTOL = 0.0086
+
+Convergence problem in transient analysis at Time =  186.3E-15
+         Time step =  186.3E-15, minimum allowable step size =  1.000E-12
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.073V  \         0V
+    V(N00657)                 =    -2.084V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =  -851.80mV  \         0V
+    V(N00212)                 =    -1.672V  \         0V
+    V(N00505)                 =    -2.081V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -2.836A  \         0A
+    I(V_Vdd)                  =   -9.349mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M1      M_M2      M_M7      M_M5      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.6720 (N00238)    -.8518 (N00280)   -2.0730 (N00454)    2.0940     
+
+(N00505)   -2.0808 (N00613) 46.81E-12 (N00657)   -2.0841 (N00835)   -2.0940 
+
+Resuming Simulation with the following settings
+RELTOL = 0.05
+
+Convergence problem in transient analysis at Time =  186.3E-15
+         Time step =  186.3E-15, minimum allowable step size =  1.000E-12
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.073V  \         0V
+    V(N00657)                 =    -2.084V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =  -851.80mV  \         0V
+    V(N00212)                 =    -1.672V  \         0V
+    V(N00505)                 =    -2.081V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -2.836A  \         0A
+    I(V_Vdd)                  =   -9.349mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M1      M_M2      M_M7      M_M5      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.6720 (N00238)    -.8518 (N00280)   -2.0730 (N00454)    2.0940     
+
+(N00505)   -2.0808 (N00613) 46.81E-12 (N00657)   -2.0841 (N00835)   -2.0940 
+
+Resuming could not converge the circuit, restarting it now
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.829V  \    -2.073V
+    V(N00657)                 =    -2.081V  \    -2.084V
+    V(N00238)                 =  -252.60mV  \  -851.80mV
+    V(N00212)                 =    -1.428V  \    -1.672V
+    V(N00505)                 =    -2.822V  \    -2.081V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -2.987A  \    -2.836A
+    I(V_Vdd)                  =   -36.05mA  \   -9.349mA
+    I(V_V3)                   =   -86.45mA  \  -824.82uA
+
+  These devices failed to converge:
+    M_M3      M_M2      M_M7      M_M8      
+Discontinuing simulation due to convergence problem
+Restarting Simulation with the following settings
+ITL4 = 125
+RELTOL = 0.0086
+ABSTOL = 1.41e-009
+
+Convergence problem in transient analysis at Time =  23.28E-15
+         Time step =  23.28E-15, minimum allowable step size =  116.3E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.011V  \         0V
+    V(N00657)                 =    -2.018V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =   904.79mV  \         0V
+    V(N00212)                 =    -1.054V  \         0V
+    V(N00505)                 =    -1.975V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -21.92A  \         0A
+    I(V_Vdd)                  =   -36.56mA  \         0A
+    I(V_V3)                   =  -427.46uA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M6      M_M3      M_M1      M_M2      M_M7      M_M5      
+    M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.0537 (N00238)     .9048 (N00280)   -2.0109 (N00454)    2.0940     
+
+(N00505)   -1.9749 (N00613) 5.852E-12 (N00657)   -2.0175 (N00835)   -2.0940 
+
+Resuming Simulation with the following settings
+ITL4 = 1000
+ABSTOL = 2e-006
+
+Convergence problem in transient analysis at Time =  23.28E-15
+         Time step =  23.28E-15, minimum allowable step size =  116.3E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.011V  \         0V
+    V(N00657)                 =    -2.018V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =   904.79mV  \         0V
+    V(N00212)                 =    -1.054V  \         0V
+    V(N00505)                 =    -1.975V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -21.92A  \         0A
+    I(V_Vdd)                  =   -36.56mA  \         0A
+    I(V_V3)                   =  -427.46uA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M6      M_M3      M_M1      M_M2      M_M7      M_M5      
+    M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.0537 (N00238)     .9048 (N00280)   -2.0109 (N00454)    2.0940     
+
+(N00505)   -1.9749 (N00613) 5.852E-12 (N00657)   -2.0175 (N00835)   -2.0940 
+
+Resuming Simulation with the following settings
+ABSTOL = 0.001
+
+Convergence problem in transient analysis at Time =  23.28E-15
+         Time step =  23.28E-15, minimum allowable step size =  116.3E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.011V  \         0V
+    V(N00657)                 =    -2.018V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =   904.79mV  \         0V
+    V(N00212)                 =    -1.054V  \         0V
+    V(N00505)                 =    -1.975V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -21.92A  \         0A
+    I(V_Vdd)                  =   -36.56mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M1      M_M2      M_M7      M_M5      M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.0537 (N00238)     .9048 (N00280)   -2.0109 (N00454)    2.0940     
+
+(N00505)   -1.9749 (N00613) 5.852E-12 (N00657)   -2.0175 (N00835)   -2.0940 
+
+Resuming Simulation with the following settings
+RELTOL = 0.05
+
+Convergence problem in transient analysis at Time =  23.28E-15
+         Time step =  23.28E-15, minimum allowable step size =  116.3E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -2.011V  \         0V
+    V(N00657)                 =    -2.018V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =   904.79mV  \         0V
+    V(N00212)                 =    -1.054V  \         0V
+    V(N00505)                 =    -1.975V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -21.92A  \         0A
+    I(V_Vdd)                  =   -36.56mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M1      M_M2      M_M7      M_M5      M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)   -1.0537 (N00238)     .9048 (N00280)   -2.0109 (N00454)    2.0940     
+
+(N00505)   -1.9749 (N00613) 5.852E-12 (N00657)   -2.0175 (N00835)   -2.0940 
+
+Resuming could not converge the circuit, restarting it now
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.397V  \    -2.011V
+    V(N00238)                 =     10.27V  \   904.79mV
+    V(N00212)                 =  -446.05mV  \    -1.054V
+    V(N00505)                 =    -14.88V  \    -1.975V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    -24.17A  \    -21.92A
+    I(V_Vdd)                  =    56.34mA  \   -36.56mA
+    I(V_V3)                   =    -1.616A  \  -427.46uA
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M2      M_M7      M_M8      
+Discontinuing simulation due to convergence problem
+Restarting Simulation with the following settings
+ITL4 = 1000
+RELTOL = 0.05
+ABSTOL = 2e-006
+
+Convergence problem in transient analysis at Time =  2.910E-15
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.602V  \         0V
+    V(N00657)                 =    -1.607V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =     1.565V  \         0V
+    V(N00212)                 =  -709.27mV  \         0V
+    V(N00505)                 =    -1.768V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -139.59A  \         0A
+    I(V_Vdd)                  =  -185.28mA  \         0A
+    I(V_V3)                   =    17.50mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M6      M_M3      M_M1      M_M2      M_M7      M_M5      
+    M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.7093 (N00238)    1.5652 (N00280)   -1.6017 (N00454)    2.0940     
+
+(N00505)   -1.7681 (N00613) 731.5E-15 (N00657)   -1.6066 (N00835)   -2.0940 
+
+Resuming Simulation with the following settings
+ABSTOL = 0.001
+
+Convergence problem in transient analysis at Time =  2.910E-15
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.602V  \         0V
+    V(N00657)                 =    -1.607V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =     1.565V  \         0V
+    V(N00212)                 =  -709.27mV  \         0V
+    V(N00505)                 =    -1.768V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -139.59A  \         0A
+    I(V_Vdd)                  =  -185.28mA  \         0A
+    I(V_V3)                   =    17.50mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M1      M_M2      M_M7      M_M5      M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.7093 (N00238)    1.5652 (N00280)   -1.6017 (N00454)    2.0940     
+
+(N00505)   -1.7681 (N00613) 731.5E-15 (N00657)   -1.6066 (N00835)   -2.0940 
+
+Resuming could not converge the circuit, restarting it now
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.006V  \    -1.602V
+    V(N00238)                 =     29.12V  \     1.565V
+    V(N00212)                 =  -112.42mV  \  -709.27mV
+    V(N00505)                 =    -82.64V  \    -1.768V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -154.36A  \   -139.59A
+    I(V_Vdd)                  =     3.574A  \  -185.28mA
+    I(V_V3)                   =    -14.65A  \    17.50mA
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M2      M_M7      M_M8      
+Discontinuing simulation due to convergence problem
+Restarting Simulation with the following settings
+ABSTOL = 0.001
+
+Convergence problem in transient analysis at Time =  2.910E-15
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.602V  \         0V
+    V(N00657)                 =    -1.607V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =     1.565V  \         0V
+    V(N00212)                 =  -709.27mV  \         0V
+    V(N00505)                 =    -1.768V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -139.59A  \         0A
+    I(V_Vdd)                  =  -185.28mA  \         0A
+    I(V_V3)                   =    17.50mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M1      M_M2      M_M7      M_M5      M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.7093 (N00238)    1.5652 (N00280)   -1.6017 (N00454)    2.0940     
+
+(N00505)   -1.7681 (N00613) 731.5E-15 (N00657)   -1.6066 (N00835)   -2.0940 
+
+Resuming could not converge the circuit, restarting it now
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.006V  \    -1.602V
+    V(N00238)                 =     29.12V  \     1.565V
+    V(N00212)                 =  -112.42mV  \  -709.27mV
+    V(N00505)                 =    -82.64V  \    -1.768V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -154.36A  \   -139.59A
+    I(V_Vdd)                  =     3.574A  \  -185.28mA
+    I(V_V3)                   =    -14.65A  \    17.50mA
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M2      M_M7      M_M8      
+Discontinuing simulation due to convergence problem
+
+ERROR(ORPSIM-15138): Convergence problem in transient analysis at Time =  2.910E-15.
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =     1.538V  \    -1.006V
+    V(N00238)                 =     4.570V  \     29.12V
+    V(N00212)                 =     2.442V  \  -112.42mV
+    V(N00505)                 =    -4.975V  \    -82.64V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    62.31KA  \   -154.36A
+    I(V_Vdd)                  =    27.08mA  \     3.574A
+    I(V_V3)                   =   -195.79A  \    -14.65A
+
+  These devices failed to converge:
+    M_M3      M_M2      M_M7      M_M8      
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    2.4415 (N00238)    4.5696 (N00280)    1.5383 (N00454)    2.0940     
+
+(N00505)   -4.9747 (N00613) 731.5E-15 (N00657)   -1.5953 (N00835)   -2.0940 
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.05
+**** Param: ABSTOL = 0.001
+**** Param: VNTOL = 1e-006
+**** Param: GMIN = 1e-012
+**** Param: TSTOP = 1
+**** Param: TMAX = 0
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 1000
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-010
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+Convergence problem in transient analysis at Time =  2.910E-15
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.602V  \         0V
+    V(N00657)                 =    -1.607V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =     1.565V  \         0V
+    V(N00212)                 =  -709.27mV  \         0V
+    V(N00505)                 =    -1.768V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -139.59A  \         0A
+    I(V_Vdd)                  =  -185.28mA  \         0A
+    I(V_V3)                   =    17.50mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M1      M_M2      M_M7      M_M5      M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.7093 (N00238)    1.5652 (N00280)   -1.6017 (N00454)    2.0940     
+
+(N00505)   -1.7681 (N00613) 731.5E-15 (N00657)   -1.6066 (N00835)   -2.0940 
+
+Resuming could not converge the circuit, restarting it now
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.006V  \    -1.602V
+    V(N00238)                 =     29.12V  \     1.565V
+    V(N00212)                 =  -112.42mV  \  -709.27mV
+    V(N00505)                 =    -82.64V  \    -1.768V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -154.36A  \   -139.59A
+    I(V_Vdd)                  =     3.574A  \  -185.28mA
+    I(V_V3)                   =    -14.65A  \    17.50mA
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M2      M_M7      M_M8      
+Discontinuing simulation due to convergence problem
+
+ERROR(ORPSIM-15138): Convergence problem in transient analysis at Time =  2.910E-15.
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =     1.538V  \    -1.006V
+    V(N00238)                 =     4.570V  \     29.12V
+    V(N00212)                 =     2.442V  \  -112.42mV
+    V(N00505)                 =    -4.975V  \    -82.64V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    62.31KA  \   -154.36A
+    I(V_Vdd)                  =    27.08mA  \     3.574A
+    I(V_V3)                   =   -195.79A  \    -14.65A
+
+  These devices failed to converge:
+    M_M3      M_M2      M_M7      M_M8      
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    2.4415 (N00238)    4.5696 (N00280)    1.5383 (N00454)    2.0940     
+
+(N00505)   -4.9747 (N00613) 731.5E-15 (N00657)   -1.5953 (N00835)   -2.0940 
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.05
+**** Param: ABSTOL = 0.001
+**** Param: VNTOL = 1e-006
+**** Param: GMIN = 1e-012
+**** Param: TSTOP = 1
+**** Param: TMAX = 0
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 1000
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-010
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+Convergence problem in transient analysis at Time =  2.910E-15
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.602V  \         0V
+    V(N00657)                 =    -1.607V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =     1.565V  \         0V
+    V(N00212)                 =  -709.27mV  \         0V
+    V(N00505)                 =    -1.768V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -139.59A  \         0A
+    I(V_Vdd)                  =  -185.28mA  \         0A
+    I(V_V3)                   =    17.50mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M1      M_M2      M_M7      M_M5      M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.7093 (N00238)    1.5652 (N00280)   -1.6017 (N00454)    2.0940     
+
+(N00505)   -1.7681 (N00613) 731.5E-15 (N00657)   -1.6066 (N00835)   -2.0940 
+
+Resuming could not converge the circuit, restarting it now
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.006V  \    -1.602V
+    V(N00238)                 =     29.12V  \     1.565V
+    V(N00212)                 =  -112.42mV  \  -709.27mV
+    V(N00505)                 =    -82.64V  \    -1.768V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -154.36A  \   -139.59A
+    I(V_Vdd)                  =     3.574A  \  -185.28mA
+    I(V_V3)                   =    -14.65A  \    17.50mA
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M2      M_M7      M_M8      
+Discontinuing simulation due to convergence problem
+
+ERROR(ORPSIM-15138): Convergence problem in transient analysis at Time =  2.910E-15.
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =     1.538V  \    -1.006V
+    V(N00238)                 =     4.570V  \     29.12V
+    V(N00212)                 =     2.442V  \  -112.42mV
+    V(N00505)                 =    -4.975V  \    -82.64V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    62.31KA  \   -154.36A
+    I(V_Vdd)                  =    27.08mA  \     3.574A
+    I(V_V3)                   =   -195.79A  \    -14.65A
+
+  These devices failed to converge:
+    M_M3      M_M2      M_M7      M_M8      
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    2.4415 (N00238)    4.5696 (N00280)    1.5383 (N00454)    2.0940     
+
+(N00505)   -4.9747 (N00613) 731.5E-15 (N00657)   -1.5953 (N00835)   -2.0940 
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.05
+**** Param: ABSTOL = 0.001
+**** Param: VNTOL = 1e-006
+**** Param: GMIN = 1e-012
+**** Param: TSTOP = 1
+**** Param: TMAX = 0
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 1000
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-010
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+Convergence problem in transient analysis at Time =  2.910E-15
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.602V  \         0V
+    V(N00657)                 =    -1.607V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =     1.565V  \         0V
+    V(N00212)                 =  -709.27mV  \         0V
+    V(N00505)                 =    -1.768V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -139.59A  \         0A
+    I(V_Vdd)                  =  -185.28mA  \         0A
+    I(V_V3)                   =    17.50mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M1      M_M2      M_M7      M_M5      M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.7093 (N00238)    1.5652 (N00280)   -1.6017 (N00454)    2.0940     
+
+(N00505)   -1.7681 (N00613) 731.5E-15 (N00657)   -1.6066 (N00835)   -2.0940 
+
+Resuming could not converge the circuit, restarting it now
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.006V  \    -1.602V
+    V(N00238)                 =     29.12V  \     1.565V
+    V(N00212)                 =  -112.42mV  \  -709.27mV
+    V(N00505)                 =    -82.64V  \    -1.768V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -154.36A  \   -139.59A
+    I(V_Vdd)                  =     3.574A  \  -185.28mA
+    I(V_V3)                   =    -14.65A  \    17.50mA
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M2      M_M7      M_M8      
+Discontinuing simulation due to convergence problem
+
+ERROR(ORPSIM-15138): Convergence problem in transient analysis at Time =  2.910E-15.
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =     1.538V  \    -1.006V
+    V(N00238)                 =     4.570V  \     29.12V
+    V(N00212)                 =     2.442V  \  -112.42mV
+    V(N00505)                 =    -4.975V  \    -82.64V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    62.31KA  \   -154.36A
+    I(V_Vdd)                  =    27.08mA  \     3.574A
+    I(V_V3)                   =   -195.79A  \    -14.65A
+
+  These devices failed to converge:
+    M_M3      M_M2      M_M7      M_M8      
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    2.4415 (N00238)    4.5696 (N00280)    1.5383 (N00454)    2.0940     
+
+(N00505)   -4.9747 (N00613) 731.5E-15 (N00657)   -1.5953 (N00835)   -2.0940 
+
+
+**** Interrupt ****
+**** Param: RELTOL = 0.05
+**** Param: ABSTOL = 0.001
+**** Param: VNTOL = 1e-006
+**** Param: GMIN = 1e-012
+**** Param: TSTOP = 1
+**** Param: TMAX = 0
+**** Param: ITL1 = 150
+**** Param: ITL2 = 20
+**** Param: ITL4 = 1000
+**** Param: AutoConverge = 1
+**** Param: AutoConverge.ITL1 = 1000
+**** Param: AutoConverge.ITL2 = 1000
+**** Param: AutoConverge.ITL4 = 1000
+**** Param: AutoConverge.RELTOL = 0.05
+**** Param: AutoConverge.ABSTOL = 0.001
+**** Param: AutoConverge.VNTOL = 0.001
+**** Param: AutoConverge.PIVTOL = 1e-010
+**** Param: ADVCONV = 1
+**** Param: Current_Simulation = 3
+**** Param: METHOD = 0
+**** Param: TRTOL = 7
+**** Param: STEPGMIN = 0
+**** Param: GMINSTEPS = 0
+**** Param: ITL6 = 0
+**** Param: NOSTEPDEP = 0
+**** Param: PTRANSTEP = 0
+**** Param: GMINSRC = 0
+**** Param: PSEUDOTRAN = 0
+**** Param: NOSTEPSRC = 0
+Convergence problem in transient analysis at Time =  2.910E-15
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.602V  \         0V
+    V(N00657)                 =    -1.607V  \         0V
+    V(N00835)                 =    -2.094V  \         0V
+    V(N00454)                 =     2.094V  \         0V
+    V(N00238)                 =     1.565V  \         0V
+    V(N00212)                 =  -709.27mV  \         0V
+    V(N00505)                 =    -1.768V  \         0V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -139.59A  \         0A
+    I(V_Vdd)                  =  -185.28mA  \         0A
+    I(V_V3)                   =    17.50mA  \         0A
+
+  These devices failed to converge:
+    M_M4      M_M1      M_M2      M_M7      M_M5      M_M8      
+Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.7093 (N00238)    1.5652 (N00280)   -1.6017 (N00454)    2.0940     
+
+(N00505)   -1.7681 (N00613) 731.5E-15 (N00657)   -1.6066 (N00835)   -2.0940 
+
+Resuming could not converge the circuit, restarting it now
+
+  These voltages failed to converge:
+
+    V(N00280)                 =    -1.006V  \    -1.602V
+    V(N00238)                 =     29.12V  \     1.565V
+    V(N00212)                 =  -112.42mV  \  -709.27mV
+    V(N00505)                 =    -82.64V  \    -1.768V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =   -154.36A  \   -139.59A
+    I(V_Vdd)                  =     3.574A  \  -185.28mA
+    I(V_V3)                   =    -14.65A  \    17.50mA
+
+  These devices failed to converge:
+    M_M4      M_M3      M_M2      M_M7      M_M8      
+Discontinuing simulation due to convergence problem
+
+ERROR(ORPSIM-15138): Convergence problem in transient analysis at Time =  2.910E-15.
+         Time step =  2.910E-15, minimum allowable step size =  20.00E-15
+
+  These voltages failed to converge:
+
+    V(N00280)                 =     1.538V  \    -1.006V
+    V(N00238)                 =     4.570V  \     29.12V
+    V(N00212)                 =     2.442V  \  -112.42mV
+    V(N00505)                 =    -4.975V  \    -82.64V
+
+  These supply currents failed to converge:
+
+    I(V_Vss)                  =    62.31KA  \   -154.36A
+    I(V_Vdd)                  =    27.08mA  \     3.574A
+    I(V_V3)                   =   -195.79A  \    -14.65A
+
+  These devices failed to converge:
+    M_M3      M_M2      M_M7      M_M8      
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    2.4415 (N00238)    4.5696 (N00280)    1.5383 (N00454)    2.0940     
+
+(N00505)   -4.9747 (N00613) 731.5E-15 (N00657)   -1.5953 (N00835)   -2.0940 
+
+
+**** Interrupt ****

@@ -1,0 +1,623 @@
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "ac sweer.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../telestikos enisxyths-pspicefiles/telestikos enisxyths.lib" 
+* From [PSPICE NETLIST] section of F:\CADENCE\WORKING DIRECTORY\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.AC DEC 100 0.1 10g
+.TEMP 0 10 20 30 40 50 60
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TELESTIKOS ENISXYTHS
+C_Cc         N00280 N00657  1.67p  TC=0,0 
+V_Vss         0 N00835 2.094Vdc
+V_Vdd         N00454 0 2.094Vdc
+C_CL         0 N00657  2.0198p  TC=0,0 
+M_M4         N00280 N00238 N00454 N00454 pfet1  
++ L=1u  
++ W=3u         
+M_M6         N00657 N00280 N00454 N00454 pfet1  
++ L=1u  
++ W=8u         
+M_M3         N00238 N00238 N00454 N00454 pfet1  
++ L=1u  
++ W=3u         
+M_M1         N00238 0 N00212 N00212 nfet1  
++ L=1u  
++ W=3u         
+M_M2         N00280 N00617 N00212 N00212 nfet1  
++ L=1u  
++ W=3u         
+M_M7         N00657 N00505 N00835 N00835 nfet1  
++ L=1u  
++ W=1.05u         
+M_M5         N00212 N00505 N00835 N00835 nfet1  
++ L=1u  
++ W=1u         
+I_Iref         N00454 N00505 DC 30uAdc  
+M_M8         N00505 N00505 N00835 N00835 nfet1  
++ L=1u  
++ W=1u         
+V_V2         0 N00617 DC 0Vdc AC 0.1Vac 
+M_M15         N22695 N22653 N22729 N22729 nfet1  
++ L=1u  
++ W=1.05u         
+C_Cc1         N22629 N22695  1.67p  TC=0,0 
+I_Iref1         N22637 N22653 DC 30uAdc  
+M_M12         N22625 N22625 N22637 N22637 pfet1  
++ L=1u  
++ W=3u         
+V_Vdd1         N22637 0 2.094Vdc
+M_M13         N22625 0 N22615 N22615 nfet1  
++ L=1u  
++ W=3u         
+M_M9         N22653 N22653 N22729 N22729 nfet1  
++ L=1u  
++ W=1u         
+M_M11         N22695 N22629 N22637 N22637 pfet1  
++ L=1u  
++ W=8u         
+M_M14         N22629 N22689 N22615 N22615 nfet1  
++ L=1u  
++ W=3u         
+M_M10         N22629 N22625 N22637 N22637 pfet1  
++ L=1u  
++ W=3u         
+C_CL1         0 N22695  2.0198p  TC=0,0 
+V_Vss1         0 N22729 2.094Vdc
+M_M16         N22615 N22653 N22729 N22729 nfet1  
++ L=1u  
++ W=1u         
+V_V3         N22689 0  
++PULSE 0 1 0 1n 1n 20u 40u
+
+**** RESUMING "ac sweer.cir" ****
+.END
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               pfet1           nfet1           
+               PMOS            NMOS            
+       LEVEL    3               3            
+         TPG   -1                            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+          LD   22.000000E-09  164.700000E-09 
+         VTO    -.9056           .786        
+          KP   29.352000E-06   96.379000E-06 
+       GAMMA     .4863           .5863       
+         PHI     .6              .6          
+      LAMBDA    0               0            
+         RSH  104.7            85.45         
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .85             .8          
+        PBSW     .85             .8          
+          CJ  484.470000E-06  385.410000E-06 
+        CJSW  164.570000E-12  139.400000E-12 
+          MJ     .5027          1.1854       
+        MJSW     .217168         .125195     
+        CGSO   53.752000E-12  402.410000E-12 
+        CGDO   53.752000E-12  402.410000E-12 
+        CGBO  336.500000E-12  361.440000E-12 
+        NSUB   18.900000E+15   16.160000E+15 
+         NFS    3.460000E+12    5.000000E+12 
+         TOX   21.200000E-09   21.200000E-09 
+          XJ  200.000000E-09  200.000000E-09 
+          UO  180.2           591.7          
+       UCRIT   10.000000E+03   10.000000E+03 
+        VMAX  373.200000E+03  208.200000E+03 
+       DELTA    1.52             .6967       
+       THETA     .1248           .08122      
+         ETA     .1641           .07066      
+       KAPPA    9.694            .1396       
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet1          nfet1     
+
+        VTO       -9.575E-01      8.347E-01  
+        PHI        6.600E-01      6.600E-01  
+         PB        8.875E-01      8.420E-01  
+     IS(JS)        1.048E-16      1.048E-16  
+         KP        3.381E-05      1.110E-04  
+         UO        2.076E+02      6.816E+02  
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.8402 (N00238)     .7027 (N00280)     .7027 (N00454)    2.0940     
+
+(N00505)    -.7272 (N00617)    0.0000 (N00657)     .4340 (N00835)   -2.0940     
+
+(N22615)    -.8402 (N22625)     .7027 (N22629)     .7027 (N22637)    2.0940     
+
+(N22653)    -.7272 (N22689)    0.0000 (N22695)     .4340 (N22729)   -2.0940 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vss       -1.044E-04
+    V_Vdd       -1.044E-04
+    V_V2         0.000E+00
+    V_Vdd1      -1.044E-04
+    V_Vss1      -1.044E-04
+    V_V3         0.000E+00
+
+    TOTAL POWER DISSIPATION   8.75E-04  WATTS
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   10.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet1          nfet1     
+
+        VTO       -9.385E-01      8.168E-01  
+        PHI        6.379E-01      6.379E-01  
+         PB        8.737E-01      8.266E-01  
+     IS(JS)        6.260E-16      6.260E-16  
+         KP        3.203E-05      1.052E-04  
+         UO        1.967E+02      6.458E+02  
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   10.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.8336 (N00238)     .7030 (N00280)     .7030 (N00454)    2.0940     
+
+(N00505)    -.7231 (N00617)    0.0000 (N00657)     .4452 (N00835)   -2.0940     
+
+(N22615)    -.8336 (N22625)     .7030 (N22629)     .7030 (N22637)    2.0940     
+
+(N22653)    -.7231 (N22689)    0.0000 (N22695)     .4452 (N22729)   -2.0940 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vss       -1.042E-04
+    V_Vdd       -1.042E-04
+    V_V2         0.000E+00
+    V_Vdd1      -1.042E-04
+    V_Vss1      -1.042E-04
+    V_V3         0.000E+00
+
+    TOTAL POWER DISSIPATION   8.72E-04  WATTS
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet1          nfet1     
+
+        VTO       -9.192E-01      7.988E-01  
+        PHI        6.157E-01      6.157E-01  
+         PB        8.598E-01      8.110E-01  
+     IS(JS)        3.319E-15      3.319E-15  
+         KP        3.041E-05      9.985E-05  
+         UO        1.867E+02      6.130E+02  
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.8269 (N00238)     .7036 (N00280)     .7036 (N00454)    2.0940     
+
+(N00505)    -.7192 (N00617)    0.0000 (N00657)     .4571 (N00835)   -2.0940     
+
+(N22615)    -.8269 (N22625)     .7036 (N22629)     .7036 (N22637)    2.0940     
+
+(N22653)    -.7192 (N22689)    0.0000 (N22695)     .4571 (N22729)   -2.0940 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vss       -1.039E-04
+    V_Vdd       -1.039E-04
+    V_V2         0.000E+00
+    V_Vdd1      -1.039E-04
+    V_Vss1      -1.039E-04
+    V_V3         0.000E+00
+
+    TOTAL POWER DISSIPATION   8.70E-04  WATTS
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   30.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet1          nfet1     
+
+        VTO       -8.997E-01      7.805E-01  
+        PHI        5.933E-01      5.933E-01  
+         PB        8.458E-01      7.953E-01  
+     IS(JS)        1.580E-14      1.580E-14  
+         KP        2.892E-05      9.495E-05  
+         UO        1.775E+02      5.829E+02  
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   30.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.8199 (N00238)     .7044 (N00280)     .7044 (N00454)    2.0940     
+
+(N00505)    -.7155 (N00617)    0.0000 (N00657)     .4696 (N00835)   -2.0940     
+
+(N22615)    -.8199 (N22625)     .7044 (N22629)     .7044 (N22637)    2.0940     
+
+(N22653)    -.7155 (N22689)    0.0000 (N22695)     .4696 (N22729)   -2.0940 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vss       -1.037E-04
+    V_Vdd       -1.037E-04
+    V_V2         0.000E+00
+    V_Vdd1      -1.037E-04
+    V_Vss1      -1.037E-04
+    V_V3         0.000E+00
+
+    TOTAL POWER DISSIPATION   8.68E-04  WATTS
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   40.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet1          nfet1     
+
+        VTO       -8.799E-01      7.619E-01  
+        PHI        5.707E-01      5.707E-01  
+         PB        8.316E-01      7.794E-01  
+     IS(JS)        6.824E-14      6.824E-14  
+         KP        2.754E-05      9.044E-05  
+         UO        1.691E+02      5.552E+02  
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   40.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.8127 (N00238)     .7053 (N00280)     .7053 (N00454)    2.0940     
+
+(N00505)    -.7121 (N00617)    0.0000 (N00657)     .4827 (N00835)   -2.0940     
+
+(N22615)    -.8127 (N22625)     .7053 (N22629)     .7053 (N22637)    2.0940     
+
+(N22653)    -.7121 (N22689)    0.0000 (N22695)     .4827 (N22729)   -2.0940 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vss       -1.035E-04
+    V_Vdd       -1.035E-04
+    V_V2         0.000E+00
+    V_Vdd1      -1.035E-04
+    V_Vss1      -1.035E-04
+    V_V3         0.000E+00
+
+    TOTAL POWER DISSIPATION   8.67E-04  WATTS
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   50.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet1          nfet1     
+
+        VTO       -8.598E-01      7.431E-01  
+        PHI        5.481E-01      5.481E-01  
+         PB        8.172E-01      7.634E-01  
+     IS(JS)        2.698E-13      2.698E-13  
+         KP        2.627E-05      8.627E-05  
+         UO        1.613E+02      5.297E+02  
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   50.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.8052 (N00238)     .7065 (N00280)     .7065 (N00454)    2.0940     
+
+(N00505)    -.7089 (N00617)    0.0000 (N00657)     .4963 (N00835)   -2.0940     
+
+(N22615)    -.8052 (N22625)     .7065 (N22629)     .7065 (N22637)    2.0940     
+
+(N22653)    -.7089 (N22689)    0.0000 (N22695)     .4963 (N22729)   -2.0940 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vss       -1.033E-04
+    V_Vdd       -1.033E-04
+    V_V2         0.000E+00
+    V_Vdd1      -1.033E-04
+    V_Vss1      -1.033E-04
+    V_V3         0.000E+00
+
+    TOTAL POWER DISSIPATION   8.65E-04  WATTS
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   60.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet1          nfet1     
+
+        VTO       -8.394E-01      7.240E-01  
+        PHI        5.252E-01      5.252E-01  
+         PB        8.027E-01      7.472E-01  
+     IS(JS)        9.843E-13      9.843E-13  
+         KP        2.510E-05      8.242E-05  
+         UO        1.541E+02      5.060E+02  
+
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   60.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00212)    -.7976 (N00238)     .7079 (N00280)     .7079 (N00454)    2.0940     
+
+(N00505)    -.7060 (N00617)    0.0000 (N00657)     .5104 (N00835)   -2.0940     
+
+(N22615)    -.7976 (N22625)     .7079 (N22629)     .7079 (N22637)    2.0940     
+
+(N22653)    -.7060 (N22689)    0.0000 (N22695)     .5104 (N22729)   -2.0940 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vss       -1.031E-04
+    V_Vdd       -1.031E-04
+    V_V2         0.000E+00
+    V_Vdd1      -1.031E-04
+    V_Vss1      -1.031E-04
+    V_V3         0.000E+00
+
+    TOTAL POWER DISSIPATION   8.64E-04  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 12/21/20 15:31:10 ****** PSpice Lite (October 2012) ****** ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ac sweer"  [ F:\Users\Mavioux\Orcad Projects\telestikos enisxyths-pspicefiles\schematic1\ac sweer.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .41
+

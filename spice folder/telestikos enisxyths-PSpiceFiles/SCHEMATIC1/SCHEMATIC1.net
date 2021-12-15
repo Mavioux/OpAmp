@@ -1,0 +1,69 @@
+* source TELESTIKOS ENISXYTHS
+C_Cc         N00280 N00657  1.67p  TC=0,0 
+V_Vss         0 N00835 2.094Vdc
+V_Vdd         N00454 0 2.094Vdc
+C_CL         0 N00657  2.0198p  TC=0,0 
+M_M4         N00280 N00238 N00454 N00454 pfet1  
++ L=1u  
++ W=3u         
+M_M6         N00657 N00280 N00454 N00454 pfet1  
++ L=1u  
++ W=8u         
+M_M3         N00238 N00238 N00454 N00454 pfet1  
++ L=1u  
++ W=3u         
+M_M1         N00238 0 N00212 N00212 nfet1  
++ L=1u  
++ W=3u         
+M_M2         N00280 N00617 N00212 N00212 nfet1  
++ L=1u  
++ W=3u         
+M_M7         N00657 N00505 N00835 N00835 nfet1  
++ L=1u  
++ W=1.05u         
+M_M5         N00212 N00505 N00835 N00835 nfet1  
++ L=1u  
++ W=1u         
+I_Iref         N00454 N00505 DC 30uAdc  
+M_M8         N00505 N00505 N00835 N00835 nfet1  
++ L=1u  
++ W=1u         
+V_V2         0 N00617 DC 0Vdc AC 0.1Vac 
+M_M15         N22683 N22653 N22729 N22729 nfet1  
++ L=1u  
++ W=1.05u         
+C_Cc1         N22629 N22683  1.67p  TC=0,0 
+M_M12         N22625 N22625 N22637 N22637 pfet1  
++ L=1u  
++ W=3u         
+V_Vdd1         N22637 0 2.094Vdc
+M_M13         N22625 N22683 N22615 N22615 nfet1  
++ L=1u  
++ W=3u         
+M_M9         N22653 N22653 N22729 N22729 nfet1  
++ L=1u  
++ W=1u         
+M_M11         N22683 N22629 N22637 N22637 pfet1  
++ L=1u  
++ W=8u         
+M_M14         N22629 N22689 N22615 N22615 nfet1  
++ L=1u  
++ W=3u         
+M_M10         N22629 N22625 N22637 N22637 pfet1  
++ L=1u  
++ W=3u         
+C_CL1         0 N22683  2.0198p  TC=0,0 
+V_Vss1         0 N22729 2.094Vdc
+M_M16         N22615 N22653 N22729 N22729 nfet1  
++ L=1u  
++ W=1u         
+V_V3         N22689 0  
++PULSE 0 1 0 1n 1n 20u 40u
+M_M17         N29172 N29172 N22637 N22637 pfet1  
++ L=1u  
++ W=0.5u         
+R_R1         N22729 N29172  1k TC=0,0 
+M_M18         N22653 N29172 N292571 N292571 pfet1  
++ L=1u  
++ W=0.5u         
+R_R2         N292571 N22637  16k TC=0,0 
