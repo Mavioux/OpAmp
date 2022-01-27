@@ -1,2 +1,2 @@
 # OpAmp
-Operation Amplifier in spice
+Operational Amplifier in spice
